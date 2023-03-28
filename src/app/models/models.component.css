@@ -1,0 +1,35 @@
+#models{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+#models > div{
+  /* aspect-ratio: 1; */
+  height: 50vh;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  font-size: xx-large;
+  color: white;
+  padding: 10%;
+  box-sizing: border-box;
+  font-weight: bold;
+  filter: brightness(80%);
+}
+#models > div:nth-child(1){
+  background-image: url("https://files.porsche.com/filestore/image/multimedia/none/carrange-flyout-718/small/57ad32c8-ca23-11ec-80ef-005056bbdc38;sN;twebp;c892;gc/porsche-small.webp");
+}
+#models > div:nth-child(2){
+  background-image: url("https://files.porsche.com/filestore/image/multimedia/none/carrange-flyout-911/small/3cf76e8c-6694-11e9-80c4-005056bbdc38;sQ;twebp;c1693;gc/porsche-small.webp");
+}
+#models > div:nth-child(3){
+  background-image: url("https://files.porsche.com/filestore/image/multimedia/none/carrange-flyout-taycan/small/094d1c1c-bab0-11e9-80c4-005056bbdc38;sQ;twebp;c1693;gc/porsche-small.webp");
+}
+#models > div:nth-child(4){
+  background-image: url("https://files.porsche.com/filestore/image/multimedia/none/carrange-flyout-panamera/small/31077aa2-d337-11ea-80cc-005056bbdc38;sQ;twebp;c1693;gc/porsche-small.webp");
+}
+#models > div:nth-child(5){
+  background-image: url("https://files.porsche.com/filestore/image/multimedia/none/carrange-flyout-macan/small/47db3c6d-e3d7-11eb-80d9-005056bbdc38;sN;twebp;c892;gc/porsche-small.webp");
+}
+#models > div:nth-child(6){
+  background-image: url("https://files.porsche.com/filestore/image/multimedia/none/carrange-flyout-cayenne/small/46131fe5-6694-11e9-80c4-005056bbdc38;sQ;twebp;c1693;gc/porsche-small.webp");
+}
