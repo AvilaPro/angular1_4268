@@ -6,8 +6,8 @@
         <mat-card class="example-card">
           <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" [src]="estreno.url" alt="Photo of a Shiba Inu">
           <mat-card-actions>
-            <button id="0" mat-button (click)="decidirComprar($event)">Encuentre modelos {{ estreno.title }}</button>
-            <p style="color: white; font-weight: bold;">{{ estreno.precio }}</p>
+            <button id="0" mat-button (click)="decidirComprar(estreno)">Encuentre modelos {{ estreno.title }}</button>
+            <p style="color: white; font-weight: bold;">{{ estreno.precio }} $</p>
           </mat-card-actions>
         </mat-card>
       </div>
@@ -15,10 +15,19 @@
   </div>
 </div>
 <!-- Condicionar que segun el monto a pagar aparezca un elemento html que le indique al usuario que tendra un descuento - Hacerlo con la directiva estructural incorporada ngIf -->
-<h2 style="margin: 100px 0;">{{ modelo }}</h2>
-<div style="height: 250px;">
+<div style="height: 250px;"*ngIf="modelo != ''">
+  <h2>Ha seleccionado el modelo: {{ modelo }}</h2>
   <label for="cantidad">cantidad a llevar:</label>
-  <input type="number" id="cantidad" [(ngModel)]="cantidad">
-  <p>Precio unitario: {{ reestreno[+identificador].precio }} $</p>
-  <h4>{{ cantidad  * reestreno[+identificador].precio }} $</h4>
+  <input type="number" id="cantidad" [(ngModel)]="cantidad" (keyup)="this.subtotal = this.precioUnitario * this.cantidad; this.fontSize = (cantidad >= 3) ">
+  <p>Precio unitario: {{ precioUnitario }} $</p>
+  <h4 *ngIf="subtotal != 0">Subtotal a pagar: {{ subtotal }} $</h4>
+  <!-- <div [ngSwitch]="cantidad" *ngIf="cantidad > 0" [ngClass]="cantidad > 2 ? 'platudos' : 'simplones'"> -->
+  <div [ngSwitch]="cantidad" *ngIf="cantidad > 0" [ngClass]="{'platudos': cantidad > 2, 'simplones' : cantidad <= 2}" [style.font-size]="fontSize ? 'x-large' : 'normal'" >
+    <div *ngSwitchCase="1">Bienvenido a la familia Porsche</div>
+    <div *ngSwitchCase="2">Para ti y para tu esposa</div>
+    <div *ngSwitchCase="3">Eres un vergatario con dinero!!!</div>
+    <div *ngSwitchCase="4">Eres un testaferro despilfarrando OJO!</div>
+    <div *ngSwitchCase="5">Eres de los mios diosdado</div>
+    <div *ngSwitchDefault>Sr. Maduro, o Elon, o Zuckerberg, o Cisneros, o Gates, Bienvenido!!!</div>
+  </div>
 </div>

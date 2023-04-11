@@ -9,7 +9,11 @@ export class AngMatComponent {
   identificador = '0';
   cantidad = 0;
   modelo = '';
-  titulo = "Busque el re--estreno"
+  titulo = "Busque el re--estreno";
+  precioUnitario = 0;
+  subtotal = 0;
+  cambioClases = {}
+  fontSize = false;
   reestreno = [
     {
       title: '718',
@@ -32,8 +36,9 @@ export class AngMatComponent {
     confirm("Quieres comprar este carro?");
   }
   decidirComprar(model: any) {
-    console.log(model);
-    this.modelo = model.target.innerHTML;
-    this.identificador = model.target.id;
+    this.modelo = model.title
+    this.precioUnitario = model.precio;
   }
+
+
 }
