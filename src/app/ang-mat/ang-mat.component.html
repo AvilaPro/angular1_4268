@@ -1,5 +1,5 @@
 <h1 style="margin-top: 100px;" class="h1Mat" id="h1angMat" [innerHTML]="titulo">Busque y encuentre su vehiculo de re-estreno</h1>
-<div style="padding: 0 15%;">
+<div style="padding: 0 15% 150px;">
   <div class="container">
     <div class="row">
       <div class="col-md-4" *ngFor="let estreno of reestreno">
@@ -8,6 +8,7 @@
           <mat-card-actions>
             <button id="0" mat-button (click)="decidirComprar(estreno)">Encuentre modelos {{ estreno.title }}</button>
             <p style="color: white; font-weight: bold;">{{ estreno.precio }} $</p>
+            <a routerLink="/detalle/{{estreno.title}}">Comprar este</a>
           </mat-card-actions>
         </mat-card>
       </div>

@@ -29,13 +29,21 @@ import { AngMatComponent } from './ang-mat/ang-mat.component';
 import { MatCardModule } from "@angular/material/card";
 import {MatGridListModule} from '@angular/material/grid-list';
 import { FormsModule } from "@angular/forms";
+import { HeaderComponent } from './header/header.component';
+import { Clase4RutaComponent } from './clase4-ruta/clase4-ruta.component';
+import { HomeComponent } from './home/home.component';
+import { DetalleComponent } from './detalle/detalle.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ModelsComponent,
     MdbComponent,
-    AngMatComponent
+    AngMatComponent,
+    HeaderComponent,
+    Clase4RutaComponent,
+    HomeComponent,
+    DetalleComponent
   ],
   imports: [
     BrowserModule,

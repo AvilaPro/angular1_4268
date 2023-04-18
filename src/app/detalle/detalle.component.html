@@ -1,0 +1,11 @@
+<!-- <h2 *ngIf="!(titulo == '' || titulo == null)">El titulo recibido es: {{titulo}}</h2> -->
+<div *ngFor="let item of reestreno">
+  <div *ngIf="item.title == titulo">
+    <img [src]="item.url" alt="">
+    <h1>El nombre del carro es {{item.title}}</h1>
+    <h4>El precio es: {{item.precio}} $</h4>
+  </div>
+</div>
+<div>
+  <a routerLink="/">Volver al home</a>
+</div>
